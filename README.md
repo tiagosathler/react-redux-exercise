@@ -14,7 +14,8 @@ Você irá implementar funcionalidades ao código do cadastro de clientes:
 * Na página de **Clientes cadastrados**, crie um botão que ordene os clientes em ordem alfabética a partir do campo nome . Caso o botão seja clicado novamente, a ordenação original deve ser mostrada.
 * Cada cadastro deve ser acompanhado de um botão com o texto X . Caso o botão seja clicado, o cadastro deve ser excluído.
 
-> Texto para fazer o exercício da Trybe do conteúdo do Bloco 15, Dia 3 - Usando o Redux no React - Prática
+> Texto para fazer o exercício do conteúdo do Bloco 15, Dia 3 do curso da Trybe - Módulo Fundamentos - Bloco Gerenciamento de estado com Redux - Dia Usando o Redux no React - Prática.
+
 > [Trybe](https://www.betrybe.com/)
 
 # Getting Started with Create React App
