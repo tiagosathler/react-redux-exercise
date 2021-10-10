@@ -8,8 +8,10 @@ class Header extends Component {
         <h1>TrybeRecords</h1>
         <aside>
           <Link to="/"> Home /</Link>
+          <Link to="/login"> Login /</Link>
           <Link to="/cadastrar"> Cadastrar Cliente /</Link>
           <Link to="/cadastros"> Ver cadastros </Link>
+
         </aside>
       </header>
     );
