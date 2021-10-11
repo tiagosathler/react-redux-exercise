@@ -1,6 +1,6 @@
 # Agora a prática
 
-> **OBS:** minha solução está na *branch* `solucao-tiago-sathler`. A *branch* `master` está parcialmente contempla apenas as páginas e componentes do *React*. Falta implementar o *BrowserRoute*, *Switch*, *Route*, *Link*, as funções de conexão ao *Redux*. Fique a vontadade para fazer um *fork* deste repositório. Tente resolver o exercício de sua forma, modifique o que achar necessário. Faça um *fork*, abaixe o seu repositório *forkeado*, crie uma *branch* a partir da `master` tipo `solucao-fulano-tal`, instale as dependências e bons estudos!
+> **OBS:** minha solução está na *branch* `solucao-tiago-sathler`. A *branch* `master` está parcialmente implementada, contém apenas as páginas e os componentes do *React*. Falta implementar o *BrowserRoute*, *Switch*, *Route*, *Link* e as funções de conexão ao *Redux*. Fique a vontadade para fazer um *fork* deste repositório. Tente resolver o exercício de sua forma, modifique o que achar necessário. Faça um *fork*, baixe o seu repositório *forkeado* para sua máquina local, crie uma *branch* a partir da `master`, tipo `solucao-fulano-tal`, instale as dependências e bons estudos!
 
 Você irá criar um sistema de cadastro de clientes. Esse sistema deve ser composto por 4 páginas: *Home*, *Login*, *Cadastrar Cliente*, *Clientes cadastrados*!
 
