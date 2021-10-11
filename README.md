@@ -1,4 +1,5 @@
-# React com Redux - Cadastrament de clientes - mão na massa
+# React com Redux
+## Aplicação cadastramento de clientes
 
 > **OBS:** minha solução está na *branch* `solucao-tiago-sathler`. A *branch* `master` está parcialmente implementada, contém apenas as páginas e os componentes do *React*. Falta implementar o *BrowserRoute*, *Switch*, *Route*, *Link* e as funções de conexão ao *Redux*. Fique à vontade para fazer um *fork* deste repositório. Tente resolver o exercício de sua forma, modifique o que achar necessário. Faça um *fork*, baixe o seu repositório *forkeado* para sua máquina local, crie uma *branch* a partir da `master`, tipo `solucao-fulano-tal`, instale as dependências e bons estudos!
 
