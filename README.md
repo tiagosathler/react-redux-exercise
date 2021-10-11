@@ -1,6 +1,8 @@
-# Agora a prática
+# React com Redux - Cadastrament de clientes - mão na massa
 
 > **OBS:** minha solução está na *branch* `solucao-tiago-sathler`. A *branch* `master` está parcialmente implementada, contém apenas as páginas e os componentes do *React*. Falta implementar o *BrowserRoute*, *Switch*, *Route*, *Link* e as funções de conexão ao *Redux*. Fique à vontade para fazer um *fork* deste repositório. Tente resolver o exercício de sua forma, modifique o que achar necessário. Faça um *fork*, baixe o seu repositório *forkeado* para sua máquina local, crie uma *branch* a partir da `master`, tipo `solucao-fulano-tal`, instale as dependências e bons estudos!
+
+> Texto para fazer o exercício do conteúdo do **Bloco 15, Dia 3** do curso da **Trybe** - Módulo Fundamentos - Bloco Gerenciamento de estado com Redux - Dia Usando o Redux no React - Prática.
 
 Você irá criar um sistema de cadastro de clientes. Esse sistema deve ser composto por 4 páginas: *Home*, *Login*, *Cadastrar Cliente*, *Clientes cadastrados*!
 
@@ -8,7 +10,7 @@ Você irá criar um sistema de cadastro de clientes. Esse sistema deve ser compo
 2. A segunda página será a de **Login** . Devem existir 2 campos para pegar os dados do usuário (email e senha). Após o login ser efetuado, o usuário deve ser redirecionado para a página de **Clientes cadastrados**.
 3. Caso o login não seja feito, ou seja, o usuário tenha mudado à mão o link do sistema e ido para a página de cadastro ou de clientes, a única mensagem exibida deve ser: "Login não efetuado".
 4. A página de **Clientes cadastrados** deverá listar todos os clientes. Caso não haja cliente, a mensagem "Nenhum cliente cadastrado" deve aparecer na tela, juntamente com um botão para ir à pagina de **Casdastrar cliente**. Esse botão deve permanecer na tela mesmo caso hajam clientes.
-5. A página de **Casdastrar cliente** cadastro deve conter 3 inputs, para pegar 3 dados do cliente: nome, idade e email. Um botão deve gerar o cadastro. Deve haver também na página um botão que leve o usuário para a página de **Clientes cadastrados** .
+5. A página de **Casdastrar cliente** deve conter 3 inputs, para pegar 3 dados do cliente: nome, idade e email. Um botão deve gerar o cadastro. Deve haver também na página um botão que leve o usuário para a página de **Clientes cadastrados** .
 6. Estados que não necessitem navegar para outros componentes, podem ser guardados internamente. Todos os outros devem ser trafegados via Redux.
 
 ## Bônus
@@ -16,7 +18,7 @@ Você irá implementar funcionalidades ao código do cadastro de clientes:
 * Na página de **Clientes cadastrados**, crie um botão que ordene os clientes em ordem alfabética a partir do campo nome . Caso o botão seja clicado novamente, a ordenação original deve ser mostrada.
 * Cada cadastro deve ser acompanhado de um botão com o texto X . Caso o botão seja clicado, o cadastro deve ser excluído.
 
-> Texto para fazer o exercício do conteúdo do Bloco 15, Dia 3 do curso da Trybe - Módulo Fundamentos - Bloco Gerenciamento de estado com Redux - Dia Usando o Redux no React - Prática.
+
 
 
 > [Trybe](https://www.betrybe.com/)
