@@ -13,9 +13,7 @@ const clientReducer = (state = INITIAL_STATE, action) => {
   case REMOVE_CLIENT:
   {
     const { clients } = state;
-    console.log(action.payload);
     const upDatedClients = clients.filter(({ name }) => name !== action.payload);
-    console.log(upDatedClients);
     return { ...state, clients: [...upDatedClients] };
   }
 

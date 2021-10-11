@@ -8,7 +8,7 @@ class Cadastrar extends Component {
   constructor(props) {
     super(props);
     const { logged } = props;
-    console.log(logged);
+
     this.state = {
       logged,
       client: {

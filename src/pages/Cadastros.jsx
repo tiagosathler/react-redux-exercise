@@ -32,7 +32,6 @@ class Cadastros extends Component {
   }
 
   handleRemove(name) {
-    console.log(name);
     const { removeClient } = this.props;
     removeClient(name);
   }
