@@ -7,14 +7,16 @@ import MakeLogin from '../components/MakeLogin';
 class Cadastrar extends Component {
   constructor(props) {
     super(props);
+    const { logged } = props;
+    console.log(logged);
     this.state = {
-      // username: '',
-      logged: false,
+      logged,
       client: {
         name: '',
         age: '',
         email: '',
       },
+      added: false,
       disabledBtn: true,
     };
     this.handleChange = this.handleChange.bind(this);
@@ -26,6 +28,7 @@ class Cadastrar extends Component {
     this.setState({
       client: { ...client, [name]: value },
       disabledBtn: !document.clientForm.checkValidity(),
+      added: false,
     });
   }
 
@@ -33,7 +36,14 @@ class Cadastrar extends Component {
     const { addClient } = this.props;
     const { client } = this.state;
     addClient(client);
-    console.table(client);
+    this.setState({
+      client: {
+        name: '',
+        age: '',
+        email: '',
+      },
+      added: true,
+    });
   }
 
   render() {
@@ -44,6 +54,7 @@ class Cadastrar extends Component {
         email,
       },
       logged,
+      added,
       disabledBtn,
     } = this.state;
     if (!logged) {
@@ -100,6 +111,7 @@ class Cadastrar extends Component {
             </button>
           </fieldset>
         </form>
+        { added && <h4>Cliente adicionado!</h4> }
       </section>
     );
   }
@@ -107,10 +119,17 @@ class Cadastrar extends Component {
 
 Cadastrar.propTypes = {
   addClient: PropTypes.func.isRequired,
+  // username: PropTypes.string.isRequired,
+  logged: PropTypes.bool.isRequired,
 };
+
+const mapStateToProps = (state) => ({
+  // username: state.user.username,
+  logged: state.user.logged,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   addClient: (client) => dispatch(addClientAction(client)),
 });
 
-export default connect(null, mapDispatchToProps)(Cadastrar);
+export default connect(mapStateToProps, mapDispatchToProps)(Cadastrar);
