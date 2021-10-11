@@ -39,7 +39,7 @@ class Login extends Component {
     const { username, password, disabledBtn, failed, logged } = this.state;
     return (
       <section>
-        { logged && <Redirect to="/cadastrar" /> }
+        { logged && <Redirect to="/cadastros" /> }
         <h2>Faça seu login</h2>
         <form name="loginForm">
           <fieldset>

@@ -11,7 +11,6 @@ class Header extends Component {
           <Link to="/login"> Login /</Link>
           <Link to="/cadastrar"> Cadastrar Cliente /</Link>
           <Link to="/cadastros"> Ver cadastros </Link>
-
         </aside>
       </header>
     );
