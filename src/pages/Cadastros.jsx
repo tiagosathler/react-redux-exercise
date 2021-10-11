@@ -1,23 +1,41 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import ClientNotFound from '../components/ClientNotFound';
 import MakeLogin from '../components/MakeLogin';
+import { removeClientAction } from '../redux/actions';
 
 class Cadastros extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    const { logged, clients } = props;
 
     this.state = {
-      logged: true,
-      clients: [],
+      logged,
+      clients,
     };
     this.sortNames = this.sortNames.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
+    this.updateState = this.updateState.bind(this);
   }
 
-  handleRemove(name) {
+  componentDidUpdate(prevProps) {
+    const { clients } = this.props;
+    if (prevProps.clients.length !== clients.length) {
+      this.updateState(clients);
+    }
+  }
+
+  handleRemove(user) {
     // implemente a função de remover ao REDUX
-    console.log(name);
+    const { removeClient } = this.props;
+    removeClient(user);
+  }
+
+  updateState(clients) {
+    this.setState({
+      clients,
+    });
   }
 
   sortNames({ target: { name, checked } }) {
@@ -69,7 +87,7 @@ class Cadastros extends Component {
               <td>
                 <button
                   type="button"
-                  onClick={ () => this.handleRemove(name) }
+                  onClick={ () => this.handleRemove({ name, age, email }) }
                 >
                   x
                 </button>
@@ -82,8 +100,19 @@ class Cadastros extends Component {
   }
 }
 
-// Cadastros.propTypes = {
+Cadastros.propTypes = {
+  logged: PropTypes.bool.isRequired,
+  clients: PropTypes.arrayOf(PropTypes.any).isRequired,
+  removeClient: PropTypes.func.isRequired,
+};
 
-// };
+const mapStateToProps = (state) => ({
+  logged: state.user.logged,
+  clients: state.data.clients,
+});
 
-export default Cadastros;
+const mapDispatchToProps = (dispatch) => ({
+  removeClient: (user) => dispatch(removeClientAction(user)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cadastros);

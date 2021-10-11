@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { notifyLoginAction } from '../redux/actions';
 
 class Login extends Component {
   constructor() {
@@ -28,9 +31,11 @@ class Login extends Component {
   handleLogin() {
     // implemente a função de notificar login ao REDUX
     const { username, password } = this.state;
+    const { notifyLogin } = this.props;
     if (username === 'tryber@trybe.com' && password === '1234') {
-      window.alert('login efetuado');
-      this.setState({ logged: true });
+      this.setState({ logged: true }, () => {
+        notifyLogin(true);
+      });
     } else {
       this.setState({ failed: true });
       window.alert('usuário ou senha inexistente');
@@ -42,7 +47,7 @@ class Login extends Component {
     return (
       <section>
         {/* implemente abaixo a chamada ao pagina de login caso não logado */}
-        { logged && <p>Não logado, redirecionar para ....</p>}
+        { logged && <Redirect to="/cadastros" /> }
         <h2>Faça seu login</h2>
         <form name="loginForm">
           <fieldset>
@@ -86,8 +91,12 @@ class Login extends Component {
   }
 }
 
-// Login.propTypes = {
+Login.propTypes = {
+  notifyLogin: PropTypes.func.isRequired,
+};
 
-// };
+const mapDispatchToProps = (dispatch) => ({
+  notifyLogin: (logged) => dispatch(notifyLoginAction(logged)),
+});
 
-export default Login;
+export default connect(null, mapDispatchToProps)(Login);
