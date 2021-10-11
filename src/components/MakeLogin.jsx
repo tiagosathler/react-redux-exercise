@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 class MakeLogin extends Component {
   render() {
@@ -8,7 +7,7 @@ class MakeLogin extends Component {
         <h3>Login não efetuado!</h3>
         <p>Para fazer o login, clique no botão abaixo:</p>
         <button type="button">
-          <Link to="/login">Login</Link>
+          Faça o Link para a pagina de Login
         </button>
       </div>
     );
