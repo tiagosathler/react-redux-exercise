@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import ClientNotFound from '../components/ClientNotFound';
 import MakeLogin from '../components/MakeLogin';
-// import PropTypes from 'prop-types';
 
 class Cadastros extends Component {
   constructor(props) {
     super(props);
+
+    const { clients, logged } = props;
+
     this.state = {
       // username: '',
-      logged: false,
-      clientes: [],
+      logged,
+      clients,
     };
   }
 
@@ -17,12 +21,12 @@ class Cadastros extends Component {
     const {
       // username,
       logged,
-      clientes,
+      clients,
     } = this.state;
     if (!logged) {
       return <MakeLogin />;
     }
-    if (clientes.length === 0) {
+    if (clients.length === 0) {
       return <ClientNotFound />;
     }
     return (
@@ -36,12 +40,12 @@ class Cadastros extends Component {
             <th>Idade</th>
             <th>Remover</th>
           </tr>
-          { clientes.map(({ name, idade, email }, index) => (
+          { clients.map(({ name, age, email }, index) => (
             <tr key={ index }>
               <td>{ index + 1 }</td>
               <td>{ name }</td>
               <td>{ email }</td>
-              <td>{ idade }</td>
+              <td>{ age }</td>
               <td>Remove</td>
             </tr>
           ))}
@@ -51,8 +55,14 @@ class Cadastros extends Component {
   }
 }
 
-// Cadastros.propTypes = {
+Cadastros.propTypes = {
+  clients: PropTypes.arrayOf(PropTypes.object).isRequired,
+  logged: PropTypes.bool.isRequired,
+};
 
-// };
+const mapStateToProps = (state) => ({
+  clients: state.data.clients,
+  logged: state.user.logged,
+});
 
-export default Cadastros;
+export default connect(mapStateToProps, null)(Cadastros);
