@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { addClientAction } from '../redux/actions';
+// import PropTypes from 'prop-types';
 import MakeLogin from '../components/MakeLogin';
 
 class Cadastrar extends Component {
-  constructor(props) {
-    super(props);
-    const { logged } = props;
+  constructor() {
+    super();
 
     this.state = {
-      logged,
+      logged: true,
       client: {
         name: '',
         age: '',
@@ -33,9 +30,7 @@ class Cadastrar extends Component {
   }
 
   handleRegister() {
-    const { addClient } = this.props;
-    const { client } = this.state;
-    addClient(client);
+    // implemente a função de registrar o cliente ao REDUX
     this.setState({
       client: {
         name: '',
@@ -117,19 +112,8 @@ class Cadastrar extends Component {
   }
 }
 
-Cadastrar.propTypes = {
-  addClient: PropTypes.func.isRequired,
-  // username: PropTypes.string.isRequired,
-  logged: PropTypes.bool.isRequired,
-};
+// Cadastrar.propTypes = {
 
-const mapStateToProps = (state) => ({
-  // username: state.user.username,
-  logged: state.user.logged,
-});
+// };
 
-const mapDispatchToProps = (dispatch) => ({
-  addClient: (client) => dispatch(addClientAction(client)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cadastrar);
+export default Cadastrar;
