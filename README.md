@@ -3,7 +3,7 @@
 
 > **OBS:** minha solução está na *branch* `solucao-tiago-sathler`. A *branch* `master` está parcialmente implementada, contém apenas as páginas e os componentes do *React*. Falta implementar o *BrowserRoute*, *Switch*, *Route*, *Link* e as funções de conexão ao *Redux*. Fique à vontade para fazer um *fork* deste repositório. Tente resolver o exercício de sua forma, modifique o que achar necessário. Faça um *fork*, baixe o seu repositório *forkeado* para sua máquina local, crie uma *branch* a partir da `master`, tipo `solucao-fulano-tal`, instale as dependências e bons estudos!
 
-> Texto para fazer o exercício do conteúdo do **Bloco 15, Dia 3** do curso da **Trybe** - Módulo Fundamentos - Bloco Gerenciamento de estado com Redux - Dia Usando o Redux no React - Prática.
+> Texto extraído do exercício do conteúdo do **Bloco 15, Dia 3** do curso da **Trybe** - Módulo Fundamentos - Bloco Gerenciamento de estado com Redux - Dia Usando o Redux no React - Prática.
 
 Você irá criar um sistema de cadastro de clientes. Esse sistema deve ser composto por 4 páginas: *Home*, *Login*, *Cadastrar Cliente*, *Clientes cadastrados*!
 
@@ -19,10 +19,8 @@ Você irá implementar funcionalidades ao código do cadastro de clientes:
 * Na página de **Clientes cadastrados**, crie um botão que ordene os clientes em ordem alfabética a partir do campo nome . Caso o botão seja clicado novamente, a ordenação original deve ser mostrada.
 * Cada cadastro deve ser acompanhado de um botão com o texto X . Caso o botão seja clicado, o cadastro deve ser excluído.
 
-
-
-
 > [Trybe](https://www.betrybe.com/)
+
 
 # Getting Started with Create React App
 
