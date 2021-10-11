@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { addClientAction } from '../redux/actions';
 import MakeLogin from '../components/MakeLogin';
-// import PropTypes from 'prop-types';
 
 class Cadastrar extends Component {
   constructor(props) {
@@ -28,7 +30,9 @@ class Cadastrar extends Component {
   }
 
   handleRegister() {
+    const { addClient } = this.props;
     const { client } = this.state;
+    addClient(client);
     console.table(client);
   }
 
@@ -101,8 +105,12 @@ class Cadastrar extends Component {
   }
 }
 
-// Cadastrar.propTypes = {
+Cadastrar.propTypes = {
+  addClient: PropTypes.func.isRequired,
+};
 
-// };
+const mapDispatchToProps = (dispatch) => ({
+  addClient: (client) => dispatch(addClientAction(client)),
+});
 
-export default Cadastrar;
+export default connect(null, mapDispatchToProps)(Cadastrar);
