@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import ClientNotFound from '../components/ClientNotFound';
 import MakeLogin from '../components/MakeLogin';
+import { removeClientAction } from '../redux/actions';
 
 const NEG_UM = -1;
 
@@ -19,6 +20,27 @@ class Cadastros extends Component {
       sort: false,
     };
     this.sortNames = this.sortNames.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
+    this.updateState = this.updateState.bind(this);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { clients } = this.props;
+    if (prevProps.clients.length !== clients.length) {
+      this.updateState(clients);
+    }
+  }
+
+  handleRemove(name) {
+    console.log(name);
+    const { removeClient } = this.props;
+    removeClient(name);
+  }
+
+  updateState(clients) {
+    this.setState({
+      clients,
+    });
   }
 
   sortNames({ target: { name, checked } }) {
@@ -79,7 +101,14 @@ class Cadastros extends Component {
               <td>{ name }</td>
               <td>{ email }</td>
               <td>{ age }</td>
-              <td>Remove</td>
+              <td>
+                <button
+                  type="button"
+                  onClick={ () => this.handleRemove(name) }
+                >
+                  x
+                </button>
+              </td>
             </tr>
           ))}
         </table>
@@ -89,8 +118,9 @@ class Cadastros extends Component {
 }
 
 Cadastros.propTypes = {
-  clients: PropTypes.arrayOf(PropTypes.object).isRequired,
+  clients: PropTypes.arrayOf(PropTypes.any).isRequired,
   logged: PropTypes.bool.isRequired,
+  removeClient: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -98,4 +128,8 @@ const mapStateToProps = (state) => ({
   logged: state.user.logged,
 });
 
-export default connect(mapStateToProps, null)(Cadastros);
+const mapDispatchToProps = (dispatch) => ({
+  removeClient: (client) => dispatch(removeClientAction(client)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cadastros);
