@@ -1,5 +1,7 @@
 # Agora a prática
 
+> **OBS:** minha solução está na *branch* `solucao-tiago-sathler`. A *branch* `master` está parcialmente contempla apenas as páginas e componentes do *React*. Falta implementar o *BrowserRoute*, *Switch*, *Route*, *Link*, as funções de conexão ao *Redux*. Fique a vontadade para fazer um *fork* deste repositório. Tente resolver o exercício de sua forma, modifique o que achar necessário. Faça um *fork*, abaixe o seu repositório *forkeado*, crie uma *branch* a partir da `master` tipo `solucao-fulano-tal`, instale as dependências e bons estudos!
+
 Você irá criar um sistema de cadastro de clientes. Esse sistema deve ser composto por 4 páginas: *Home*, *Login*, *Cadastrar Cliente*, *Clientes cadastrados*!
 
 1. A primeira página deve ser a **Home** . Ela deverá ter um Link que possibilite ao usuário navegar para a página de login.
@@ -15,6 +17,7 @@ Você irá implementar funcionalidades ao código do cadastro de clientes:
 * Cada cadastro deve ser acompanhado de um botão com o texto X . Caso o botão seja clicado, o cadastro deve ser excluído.
 
 > Texto para fazer o exercício do conteúdo do Bloco 15, Dia 3 do curso da Trybe - Módulo Fundamentos - Bloco Gerenciamento de estado com Redux - Dia Usando o Redux no React - Prática.
+
 
 > [Trybe](https://www.betrybe.com/)
 
